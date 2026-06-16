@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #010101;
+  --color-foreground: #f8f8f8;
+
+  --color-card: #0d0d0d;
+  --color-card-foreground: #f8f8f8;
+
+  --color-primary: #85a300;
+  --color-primary-foreground: #010101;
+  --color-primary-glow: #a8cc00;
+
+  --color-secondary: #161616;
+  --color-secondary-foreground: #f8f8f8;
+
+  --color-muted: #141414;
+  --color-muted-foreground: rgba(248, 248, 248, 0.6);
+
+  --color-accent: #85a300;
+  --color-accent-foreground: #010101;
+
+  --color-destructive: #e0563f;
+  --color-destructive-foreground: #f8f8f8;
+
+  --color-border: rgba(248, 248, 248, 0.12);
+  --color-input: rgba(248, 248, 248, 0.14);
+  --color-ring: #85a300;
+
+  --font-display: "Bebas Neue", "Impact", sans-serif;
+  --font-sans: "Barlow", "Inter", system-ui, sans-serif;
+
+  --radius-2xl: 1.25rem;
+  --radius-3xl: 1.5rem;
+}
+
+/* Brand gradients & effects */
+:root {
+  --gradient-hero: radial-gradient(ellipse at 70% 20%, rgba(133, 163, 0, 0.28), transparent 60%),
+    radial-gradient(ellipse at 20% 80%, rgba(133, 163, 0, 0.12), transparent 55%),
+    linear-gradient(180deg, #010101, #050505);
+  --gradient-court: linear-gradient(135deg, #85a300, #a8cc00);
+  --shadow-glow: 0 20px 60px -20px rgba(133, 163, 0, 0.55);
+  --shadow-card: 0 10px 40px -15px rgba(0, 0, 0, 0.7);
+}
+
+@font-face {
+  font-family: "Bebas Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/bebasneue/v14/JTUSjIg69CK48gW7PXoo9WlhyA.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/barlow/v12/7cHpv4kjgoGqM7E_DMs5.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/barlow/v12/7cHqv4kjgoGqM7E3w-oc4Pg.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Barlow";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("https://fonts.gstatic.com/s/barlow/v12/7cHqv4kjgoGqM7E3z-Yc4Pg.woff2") format("woff2");
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,
+  h2,
+  h3,
+  .font-display {
+    font-family: var(--font-display);
+    letter-spacing: 0.02em;
+  }
+}
+
+@layer utilities {
+  .bg-hero {
+    background: var(--gradient-hero);
+  }
+  .bg-court {
+    background: var(--gradient-court);
+  }
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  .text-primary-glow {
+    color: var(--color-primary-glow);
+  }
+
+  .court-lines {
+    background-image: linear-gradient(#f8f8f8 2px, transparent 2px),
+      linear-gradient(90deg, #f8f8f8 2px, transparent 2px);
+    background-size: 60px 60px;
+    opacity: 0.06;
+  }
+}
